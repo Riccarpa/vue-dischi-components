@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <Header/>
-    <DiscSection/>
+    <Header />
+    <DiscSection />
   </div>
 </template>
 
 <script>
+import Header from "@/components/Header.vue";
+import DiscSection from "@/components/DiscSection.vue";
 
-import Header from '@/components/Header.vue';
-import DiscSection from '@/components/DiscSection.vue';
 export default {
   name: "App",
   components: {
@@ -19,5 +19,5 @@ export default {
 </script>
 
 <style lang="scss">
- @import './scss/style.scss' 
+@import "./scss/style.scss";
 </style>

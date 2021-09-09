@@ -7,26 +7,26 @@
       }}</option>
     </select>
     <section id="album-container">
-      <div
+      <Card
         v-for="(album, index) in albumListSorted"
         :key="index"
+        :album="album"
         v-show="genreFilter(album)"
-        class="card"
-      >
-        <img :src="album.poster" alt="New Jersey" />
-        <h2 class="title">{{ album.title }}</h2>
-        <address class="author">{{ album.author }}</address>
-        <time datetime="1988" class="year">{{ album.year }}</time>
-      </div>
+      />
     </section>
   </main>
 </template>
 
 <script>
 import axios from "axios";
+import Card from "@/components/Card.vue";
 
 export default {
   name: "DiscSection",
+  components: {
+    Card,
+  },
+
   data() {
     return {
       albumList: [],
