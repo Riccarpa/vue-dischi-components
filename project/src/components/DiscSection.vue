@@ -7,7 +7,9 @@
       }}</option>
     </select>
     <section id="album-container">
+      <Loader v-if="!albumList" />
       <Card
+        v-else
         v-for="(album, index) in albumListSorted"
         :key="index"
         :album="album"
@@ -20,11 +22,13 @@
 <script>
 import axios from "axios";
 import Card from "@/components/Card.vue";
+import Loader from "@/components/Loader.vue";
 
 export default {
   name: "DiscSection",
   components: {
     Card,
+    Loader,
   },
 
   data() {
